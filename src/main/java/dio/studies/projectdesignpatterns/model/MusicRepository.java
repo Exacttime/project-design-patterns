@@ -1,0 +1,12 @@
+package dio.studies.projectdesignpatterns.model;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public interface MusicRepository extends CrudRepository<Music, String> {
+    List<Music> findByNameContaining(String nome);
+}
